@@ -6,17 +6,15 @@ class CalculatorBrain {
   final int weight;
   final int height;
 
+  late double _bmi = double.parse(calculateBMI());
+
   String calculateBMI() {
     double _bmi = weight / pow(height / 100, 2);
     return _bmi.toStringAsFixed(1);
   }
 
-  double _getBMIVal() {
-    return weight / pow(height / 100, 2);
-  }
-
   String getResult() {
-    double _bmi = double.parse(calculateBMI());
+    // double _bmi = double.parse(calculateBMI());
     if (_bmi >= 25) {
       return 'Overweight';
     } else if (_bmi >= 18.5) {
@@ -27,7 +25,7 @@ class CalculatorBrain {
   }
 
   String getInterpretation() {
-    double _bmi = double.parse(calculateBMI());
+    // double _bmi = double.parse(calculateBMI());
     if (_bmi >= 25) {
       return 'You have a higher than normal body  weight. Try to exercise more.';
     } else if (_bmi >= 18.5) {
